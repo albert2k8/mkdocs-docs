@@ -6,8 +6,8 @@
 > * La instalación se realiza sobre un sistema operativo Oracle Linux 9.
 > * La máquina virtual consta de un particionado base de aproximadamente `56GB`, quedando libres `44GB`.
 > * La máquina virtual cumple con al menos el 80% de [CIS Oracle Linux 9 Benchmark v2.0.0](https://learn.cisecurity.org/l/799323/2024-06-12/4tq143)
-> * * La instalación es compatible con SELinux en modo `enforcing`.
->   * * La instalación es compatible con el uso del servicio `firewalld`.
+> * La instalación es compatible con SELinux en modo `enforcing`.
+> * La instalación es compatible con el uso del servicio `firewalld`.
 
 ## Rutas de instalación para módulos AFC
 
@@ -97,8 +97,8 @@ firewall-cmd --list-all
 
 ## Instalación del software WILDFLY
 
-!!! warning 
-    En este manual, el disco añadido es `/dev/sdb` en otros entornos no tiene por que existir ni ser el mismo.
+> [!WARNING]
+> En este manual, el disco añadido es `/dev/sdb` en otros entornos no tiene por que existir ni ser el mismo.
 
 Para la creación del servicio SFTP se ha optado por emplear un disco adicional, lo que permite crear un módulo con un almacenamiento independiente, facilitando realizar modificaciones sobre el tamaño.
 Tambien protege el sistema de ficheros, pues en caso de que se dispare el uso del disco, nunca podrá ocuparse más espacio del asignado, protegiendo el sistema operativo.
@@ -128,6 +128,22 @@ systemctl daemon-reload
 mkdir /AFC/module/afcweb
 mount /dev/mapper/vg_afcweb-afcweb /AFC/module/afcweb
 df -h | grep vg_afcweb
+```
+
+Wildlfy requiere de la instalación de JAVA. Debido a temas de licenciamiento, se empleará la versión software libre de [openJDK](https://jdk.java.net/archive/). La versión `24.0.1.Final` de Wildfly es compatible con versiones de java iguales o superiores a la versión 11, por lo que descargaremos [openjdk-11.0.2](https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz). El software puede descargarse directamente en la máquina virtual siempre que haya salida a internet con el comando `wget` y lo guardaremos en la ruta `/AFC/installers`.
+
+``` bash
+# Descarga de la version 11.0.2
+wget https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz -P /AFC/installers
+```
+
+Iniciamos la instalación de ActiveMQ con la instalación de la java. Se descomprime en la ruta `/AFC/sw_base/` y se creará un link simbólico, lo que permite separar las configuraciones de la versión de java, facilitando el proceso de actualizar a una nueva versión.
+
+``` bash
+tar xvzf /AFC/installers/openjdk-11.0.2_linux-x64_bin.tar.gz -C /AFC/sw_base/
+ln -s /AFC/sw_base/jdk-11.0.2 /AFC/sw_base/java
+chown -R afcmodule: /AFC/sw_base/jdk-11.0.2
+/AFC/sw_base/openjdk-11/bin/java -version
 ```
 
 Para instalar Wildfly, descargaremos la versión utilizada en proyecto, [wildfly-24.0.1.Final](https://download.jboss.org/wildfly/24.0.1.Final/wildfly-24.0.1.Final.tar.gz). En el caso de ser necesario, es posible descargar otras versiones de [wildfly](https://www.wildfly.org/downloads/). El software puede descargarse directamente en la máquina virtual siempre que haya salida a internet con el comando `wget` y lo guardaremos en la ruta `/AFC/installers`.
