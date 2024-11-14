@@ -153,7 +153,7 @@ Iniciamos la instalación de ActiveMQ con la instalación de la java. Se descomp
 
 ``` bash
 tar xvzf /AFC/installers/openjdk-11.0.2_linux-x64_bin.tar.gz -C /AFC/sw_base/
-ln -s /AFC/sw_base/jdk-11.0.2 /AFC/sw_base/openjdk-11
+ln -s /AFC/sw_base/jdk-11.0.2 /AFC/sw_base/java
 chown -R afcmodule: /AFC/sw_base/jdk-11.0.2
 /AFC/sw_base/openjdk-11/bin/java -version
 ```
@@ -174,7 +174,7 @@ cd /AFC/module/afcbroker/software/activemq/bin/
 
 # Edicion del fichero env
 sed -i 's|ACTIVEMQ_USER=""|ACTIVEMQ_USER="afcmodule"|' env
-sed -i 's|#JAVA_HOME=""|JAVA_HOME="/AFC/sw_base/openjdk-11"|' env
+sed -i 's|#JAVA_HOME=""|JAVA_HOME="/AFC/sw_base/java"|' env
 sed -i 's|^JAVACMD="auto"|#JAVACMD="auto"|' env
 
 # Verificación de los cambios aplicados
