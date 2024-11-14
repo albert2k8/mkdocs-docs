@@ -1,5 +1,26 @@
-site_name: MkDocs YouTube Tutorial
-site_url: https://james-willett.github.io/mkdocs-material-youtube-tutorial/
+site_name: MkDocs
+
+nav:
+  - Home: 00_index.md
+  - Template: 01_OracleLinux9.md
+  - DNS: 02_dns.md
+  - Proxy: 03_squid.md
+  - Nginx: 04_nginx.md
+  - Repo: 05_local_repository.md
+  - SFTP: 06_sftp.md
+  - PaceMaker: 07_pacemaker.md
+  - microK8S: 08_microk8s.md
+  - nexus: 09_local_registry.md
+  - redis: 10_redis.md
+  - ActiveMQ: 11_activemq.md
+  - Artemis: 12_artemis.md
+  - Tomcat: 13_tomcat.md
+  - Jasperreport: 14_jasperreport.md
+  - Keepalive: 15_keepalive.md
+  - HAProxy: 16_haproxy.md
+  - SiteRecovery: 17_site_recovery.md
+  - LifeRecovery: 18_life_recovery.md
+
 theme:
   name: material
   features:
@@ -12,33 +33,23 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
-  language: en
+  language: es
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-      primary: teal
-      accent: purple 
-    - scheme: slate 
+      primary: indigo
+      accent: purple
+    - scheme: slate
       toggle:
         icon: material/toggle-switch
-        name: Switch to light mode    
-      primary: teal
+        name: Switch to light mode
+      primary: indigo
       accent: lime
 
 plugins:
-  - social
   - search
-
-extra:
-  social:
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/james-willett
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/TheJamesWillett
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/willettjames/
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -53,9 +64,3 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-
-copyright: |
-  &copy; 2023 <a href="https://github.com/james-willett"  target="_blank" rel="noopener">James Willett</a>
