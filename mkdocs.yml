@@ -9,9 +9,9 @@ nav:
   - Repo: 05_local_repository.md
   - SFTP: 06_sftp.md
   - PaceMaker: 07_pacemaker.md
-  - microK8S: 08_microk8s.md
-  - nexus: 09_local_registry.md
-  - redis: 10_redis.md
+  - MicroK8S: 08_microk8s.md
+  - Nexus: 09_local_registry.md
+  - Redis: 10_redis.md
   - ActiveMQ: 11_activemq.md
   - Artemis: 12_artemis.md
   - Tomcat: 13_tomcat.md
