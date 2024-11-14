@@ -16,10 +16,11 @@ nav:
   - Artemis: 12_artemis.md
   - Tomcat: 13_tomcat.md
   - Jasperreport: 14_jasperreport.md
-  - Keepalive: 15_keepalive.md
-  - HAProxy: 16_haproxy.md
-  - SiteRecovery: 17_site_recovery.md
-  - LifeRecovery: 18_life_recovery.md
+  - Wildfly: 15_wildfly.md
+  - Keepalive: 16_keepalive.md
+  - HAProxy: 17_haproxy.md
+  - SiteRecovery: 18_site_recovery.md
+  - LifeRecovery: 19_life_recovery.md
 
 theme:
   name: material
