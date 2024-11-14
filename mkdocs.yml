@@ -1,7 +1,7 @@
 site_name: MkDocs
 
 nav:
-  - Home: 00_index.md
+#  - Home: 00_index.md
   - Template: 01_OracleLinux9.md
   - DNS: 02_dns.md
   - Proxy: 03_squid.md
