@@ -1,13 +1,13 @@
 # Guía de instalación de WILDFLY
 
-!!! warning "Consideraciones previas"
-    Este manual se ha diseñado empleando una forma de estructurar los directorios y el particionado muy concretas, no implica que sea la única forma de proceder.
-
-    * La instalación se realiza sobre un sistema operativo Oracle Linux 9.
-    * La máquina virtual consta de un particionado base de aproximadamente `56GB`, quedando libres `44GB`.
-    * La máquina virtual cumple con al menos el 80% de [CIS Oracle Linux 9 Benchmark v2.0.0](https://learn.cisecurity.org/l/799323/2024-06-12/4tq143)
-    * La instalación es compatible con SELinux en modo `enforcing`.
-    * La instalación es compatible con el uso del servicio `firewalld`.
+> [!WARNING]
+> "Consideraciones previas"
+> Este manual se ha diseñado empleando una forma de estructurar los directorios y el particionado muy concretas, no implica que sea la única forma de proceder.
+> * La instalación se realiza sobre un sistema operativo Oracle Linux 9.
+> * La máquina virtual consta de un particionado base de aproximadamente `56GB`, quedando libres `44GB`.
+> * La máquina virtual cumple con al menos el 80% de [CIS Oracle Linux 9 Benchmark v2.0.0](https://learn.cisecurity.org/l/799323/2024-06-12/4tq143)
+> * * La instalación es compatible con SELinux en modo `enforcing`.
+>   * * La instalación es compatible con el uso del servicio `firewalld`.
 
 ## Rutas de instalación para módulos AFC
 
