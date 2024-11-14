@@ -1,13 +1,12 @@
 # Guía de instalación de ARTEMIS
 
-!!! warning
-    Este manual se ha diseñado empleando una forma de estructurar los directorios y el particionado muy concretas, no implica que sea la única forma de proceder.
-
-    * La instalación se realiza sobre un sistema operativo Oracle Linux 9.
-    * La máquina virtual consta de un particionado base de aproximadamente `56GB`, quedando libres `44GB`.
-    * La máquina virtual cumple con al menos el 80% de [CIS Oracle Linux 9 Benchmark v2.0.0](https://learn.cisecurity.org/l/799323/2024-06-12/4tq143)
-    * La instalación es compatible con SELinux en modo `enforcing`.
-    * La instalación es compatible con el uso del servicio `firewalld`.
+> [!WARNING]
+> Este manual se ha diseñado empleando una forma de estructurar los directorios y el particionado muy concretas, no implica que sea la única forma de proceder.    
+> * La instalación se realiza sobre un sistema operativo Oracle Linux 9.
+> * La máquina virtual consta de un particionado base de aproximadamente `56GB`, quedando libres `44GB`.
+> * La máquina virtual cumple con al menos el 80% de [CIS Oracle Linux 9 Benchmark v2.0.0](https://learn.cisecurity.org/l/799323/2024-06-12/4tq143)
+> * La instalación es compatible con SELinux en modo `enforcing`.
+> * La instalación es compatible con el uso del servicio `firewalld`.
 
 ## Rutas de instalación para módulos AVL
 
@@ -103,8 +102,8 @@ firewall-cmd --list-all
 
 ## Instalación del software ARTEMIS
 
-!!! warning 
-    En este manual, el disco añadido es `/dev/sdc` en otros entornos no tiene por que existir ni ser el mismo.
+> [!WARNING]
+> En este manual, el disco añadido es `/dev/sdc` en otros entornos no tiene por que existir ni ser el mismo.
 
 Para la instalación de Artemis se ha optado por emplear un disco adicional, lo que permite crear un módulo con un almacenamiento independiente, facilitando realizar modificaciones sobre el tamaño.
 Tambien protege el sistema de ficheros, pues en caso de que se dispare el uso del disco, nunca podrá ocuparse más espacio del asignado, protegiendo el sistema operativo.
